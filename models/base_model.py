@@ -14,6 +14,7 @@ class BaseModel:
     """
     BaseModel is the base class of the project
     """
+
     def __init__(self, *args, **kwargs):
         """Initialization of the class"""
         if kwargs:
