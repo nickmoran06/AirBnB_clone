@@ -60,12 +60,10 @@ class TestCity(unittest.TestCase):
         self.inst.save()
         self.assertTrue(os.path.isfile("file.json"))
 
-    def test_Methods(self):
+    def test_Attrs(self):
         """Testing the existence of the different methods"""
-        self.assertTrue(hasattr(City, "__init__"))
-        self.assertTrue(hasattr(City, "__str__"))
-        self.assertTrue(hasattr(City, "save"))
-        self.assertTrue(hasattr(City, "to_dict"))
+        self.assertTrue(hasattr(City, "name"))
+        self.assertTrue(hasattr(City, "state_id"))
 
     def test_ClassDict(self):
         """Testing the dictionary of the class"""

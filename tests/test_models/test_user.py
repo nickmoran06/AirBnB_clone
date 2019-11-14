@@ -16,15 +16,13 @@ class TestUser(unittest.TestCase):
     """
 
     # Specific set up of the unittest
-    @classmethod
-    def setUp(cls):
+    def setUp(self):
         """Instance of the class"""
-        cls.inst = User()
+        self.inst = User()
 
-    @classmethod
-    def tearDown(cls):
+    def tearDown(self):
         """Deleting of the instance with the proper file"""
-        del cls.inst
+        del self.inst
 
         try:
             os.remove("file.json")
@@ -62,12 +60,12 @@ class TestUser(unittest.TestCase):
         self.inst.save()
         self.assertTrue(os.path.isfile("file.json"))
 
-    def test_Methods(self):
+    def test_Attrs(self):
         """Testing the existence of the different methods"""
-        self.assertTrue(hasattr(User, "__init__"))
-        self.assertTrue(hasattr(User, "__str__"))
-        self.assertTrue(hasattr(User, "save"))
-        self.assertTrue(hasattr(User, "to_dict"))
+        self.assertTrue(hasattr(User, "email"))
+        self.assertTrue(hasattr(User, "password"))
+        self.assertTrue(hasattr(User, "first_name"))
+        self.assertTrue(hasattr(User, "last_name"))
 
     def test_ClassDict(self):
         """Testing the dictionary of the class"""

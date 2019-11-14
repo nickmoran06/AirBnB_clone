@@ -59,12 +59,9 @@ class TestAmenity(unittest.TestCase):
         self.inst.save()
         self.assertTrue(os.path.isfile("file.json"))
 
-    def test_Methods(self):
+    def test_Attrs(self):
         """Testing the existence of the different methods"""
-        self.assertTrue(hasattr(Amenity, "__init__"))
-        self.assertTrue(hasattr(Amenity, "__str__"))
-        self.assertTrue(hasattr(Amenity, "save"))
-        self.assertTrue(hasattr(Amenity, "to_dict"))
+        self.assertTrue(hasattr(Amenity, "name"))
 
     def test_ClassDict(self):
         """Testing the dictionary of the class"""

@@ -71,10 +71,17 @@ class TestPlace(unittest.TestCase):
 
     def test_Methods(self):
         """Testing the existence of the different methods"""
-        self.assertTrue(hasattr(Place, "__init__"))
-        self.assertTrue(hasattr(Place, "__str__"))
-        self.assertTrue(hasattr(Place, "save"))
-        self.assertTrue(hasattr(Place, "to_dict"))
+        self.assertTrue(hasattr(Place, "city_id"))
+        self.assertTrue(hasattr(Place, "user_id"))
+        self.assertTrue(hasattr(Place, "name"))
+        self.assertTrue(hasattr(Place, "description"))
+        self.assertTrue(hasattr(Place, "number_rooms"))
+        self.assertTrue(hasattr(Place, "number_bathrooms"))
+        self.assertTrue(hasattr(Place, "max_guest"))
+        self.assertTrue(hasattr(Place, "price_by_night"))
+        self.assertTrue(hasattr(Place, "latitude"))
+        self.assertTrue(hasattr(Place, "longitude"))
+        self.assertTrue(hasattr(Place, "amenity_ids"))
 
     def test_ClassDict(self):
         """Testing the dictionary of the class"""

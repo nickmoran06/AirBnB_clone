@@ -61,10 +61,7 @@ class TestState(unittest.TestCase):
 
     def test_Methods(self):
         """Testing the existence of the different methods"""
-        self.assertTrue(hasattr(State, "__init__"))
-        self.assertTrue(hasattr(State, "__str__"))
-        self.assertTrue(hasattr(State, "save"))
-        self.assertTrue(hasattr(State, "to_dict"))
+        self.assertTrue(hasattr(State, "name"))
 
     def test_ClassDict(self):
         """Testing the dictionary of the class"""

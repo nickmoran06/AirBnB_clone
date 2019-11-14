@@ -61,10 +61,9 @@ class TestReview(unittest.TestCase):
 
     def test_Methods(self):
         """Testing the existence of the different methods"""
-        self.assertTrue(hasattr(Review, "__init__"))
-        self.assertTrue(hasattr(Review, "__str__"))
-        self.assertTrue(hasattr(Review, "save"))
-        self.assertTrue(hasattr(Review, "to_dict"))
+        self.assertTrue(hasattr(Review, "place_id"))
+        self.assertTrue(hasattr(Review, "user_id"))
+        self.assertTrue(hasattr(Review, "text"))
 
     def test_ClassDict(self):
         """Testing the dictionary of the class"""
