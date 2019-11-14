@@ -43,7 +43,8 @@ File | Description
 ## Execute
    - Run the console in interactive mode: `./console`
    - But also in non-interactive mode: (like the Shell project in C:) echo "help" | `./console.py`
- Example
+
+##Example
 Run the executable in your terminal:
 ```
 $ ./console
@@ -58,4 +59,13 @@ EOF  help  quit
 (hbnb) quit
 
 ```
+---
+
+## Bugs
+There are no known bugs.
+
+## Authors
+[Diego Ramos](https://github.com/DiegoRmsR) | [@Imdiegoramoss](https://twitter.com/@Imdiegoramoss)
+
+[Nicolás Morán](https://github.com/nickmoran06) | [@nickmoran06](https://twitter.com/nickmoran06)
 
