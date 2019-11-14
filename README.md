@@ -1,5 +1,5 @@
 <p>
-<img width="200" src="https://lh4.googleusercontent.com/yUzaviDgzDIq4-ZHp9k0YU5fsz0nOdekNRt1qHgp7Qdlw5BNfe6bETEf5ZWd-Vkn_m57BPx7HcDrwFK41ptLnQLTNipWmTAtiQwZL_8s97Nkzn94xP7XVKb3RnV0fx8QEZoxlkVd" align="right" >
+<img width="200" src="https://camo.githubusercontent.com/a0c52a69dc410e983b8c63fa4aa57e83cb4157cd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f696e7472616e65742d70726f6a656374732d66696c65732f686f6c626572746f6e7363686f6f6c2d6869676865722d6c6576656c5f70726f6772616d6d696e672b2f3236332f4842544e2d68626e622d46696e616c2e706e67" align="right" >
 </p>
 
 # AirBnB clone - The console
@@ -16,26 +16,38 @@
 * [Authors](#authors)
 
 ## Description
-AirBnB clone - The console is 
+The console of the AirBnB clone is a command interpreter to manage the AirBnB objects, that allow to undestand the manipulation of the information required and how is storage in the program.
 
 ## Files
-File | Description
---- | ---
-`shell.h` | header file
-`main.` | Execute shell_loop.c
-`shell_loop.c` | funtion tha wait for a string a process it.
-`shell_read.c` | Function that obtains and reads a line
-`shell_token.c` | Funtion tha tokenizes the string using two points as delimiters.
-`shell_status.c` | Function that executes the processes
-`shell_path.c` | Function related to executing commands
-`shell_prosses` | function that creates a new process
-`shelil_buitlings` | Funtion thet execute buitlings
-`puts_grid.c` | Funtion tha print a matrix
-`str_funt`.c | contains different functions for the handling of strings
-`man_1_simple_shell` | Manual page for the simple_shell
+- models: Module that contains all the classes .
+  - engine
+    - __init__.py: Files named __init__.py are used to mark directories on disk as Python package directories
+    - file_storage.py: class FileStorage that serializes instances to a JSON file and deserializes JSON file to instances
+  - __init__.py: Files named __init__.py are used to mark directories on disk as Python package directories.
+  - amenity.py: Module that contains the Amenity class
+  - base_model.py: Module that contains the BaseModel class
+  - city.py: Module that contains the City class
+  - place.py: Module that contains the Place class
+  - review.py: Module that contains the Review class
+  - state.py: Module that contains the State class
+  - user.py: Module that contains the User class
+- tests: Module that contains the tests.
+  - test_models: Module that contains uniqtest
+    - __init__.py: Files named __init__.py are used to mark directories on disk as Python package directories.
+    - test_amenity.py: Module of the Amenity unittest
+    - test_base_model.py: Module of the BaseModel unittest
+    - test_city.py: Module of the City unittest
+    - test_place.py: Module of the Place unittest
+    - test_review.py: Module of the Review unittest
+    - test_state.py: Module of the State unittest
+    - test_user.py: Module of the User unittest
+  - __init__.py: Files named __init__.py are used to mark directories on disk as Python package directories
+- AUTHORS: File that contains all individuals having contributed content to the repository
+- console.py: command interpreter (console.py) to have these commands
 
 ---
 ## Requirements
+   - The console for AirBnb clone is designed for python3.4
 
 ## Installation
    - Clone this repository: `https://github.com/nickmoran06/AirBnB_clone.git"`
