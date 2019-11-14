@@ -39,3 +39,7 @@ File | Description
 
 ## Installation
    - Clone this repository: `https://github.com/nickmoran06/AirBnB_clone.git"`
+
+## Execute
+   - Run the console in interactive mode: `./console`
+   - But also in non-interactive mode: (like the Shell project in C:) echo "help" | `./console.py`
