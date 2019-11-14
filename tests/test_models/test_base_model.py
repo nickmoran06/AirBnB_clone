@@ -51,12 +51,16 @@ class TestBaseModel(unittest.TestCase):
     # Existence and types
     def test_IsInstance(self):
         """Testing the existence of the instance"""
-        DictIns = self.inst.to_dict()
+        In = BaseModel()
+        DIn = self.inst.to_dict()
         self.assertIsInstance(self.inst, BaseModel)
-        self.assertEqual(DictIns['__class__'], "BaseModel")
-        self.assertEqual(DictIns['created_at'], self.inst.created_at.isoformat())
-        self.assertEqual(DictIns['updated_at'], self.inst.updated_at.isoformat())
-        self.assertEqual(DictIns['id'], self.inst.id)
+        self.assertEqual(DIn['__class__'], "BaseModel")
+        self.assertEqual(DIn['created_at'],
+                         self.inst.created_at.isoformat())
+        self.assertEqual(DIn['updated_at'],
+                         self.inst.updated_at.isoformat())
+        self.assertEqual(DIn['id'], self.inst.id)
+        In.save()
 
     def test_Types(self):
         """Test the types of the atributes"""
