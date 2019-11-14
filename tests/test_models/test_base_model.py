@@ -30,11 +30,13 @@ class TestBaseModel(unittest.TestCase):
 
     # Functionality
     def test_AtributtesClass(self):
-        self.assertIs(datetime, type(self.inst.created_at))
-        self.assertIs(datetime, type(self.inst.updated_at))
         self.assertNotEqual(datetime.now(), self.inst.created_at)
         self.assertNotEqual(datetime.now(), self.inst.updated_at)
         self.assertNotEqual(self.inst.created_at, self.inst.updated_at)
+
+    def test_save(self):
+        Instance = BaseModel()
+        Instance.save()
 
     # Documentation
     def test_ModuleDocstring(self):
@@ -55,15 +57,14 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(DictIns['created_at'], self.inst.created_at.isoformat())
         self.assertEqual(DictIns['updated_at'], self.inst.updated_at.isoformat())
         self.assertEqual(DictIns['id'], self.inst.id)
-        self.assertIsInstance(DictIns['created_at'], str)
-        self.assertIsInstance(DictIns['updated_at'], str)
-
 
     def test_Types(self):
         """Test the types of the atributes"""
         self.assertEqual(str, type(self.inst.id))
         self.assertIs(str, type(self.inst.id))
-
+        self.assertIs(datetime, type(self.inst.created_at))
+        self.assertIs(datetime, type(self.inst.updated_at))
+        self.assertFalse(self.inst.updated_at == datetime.utcnow())
 
     def test_File(self):
         """The existence of the json file"""
@@ -80,6 +81,7 @@ class TestBaseModel(unittest.TestCase):
     def test_ClassDict(self):
         """Testing the dictionary of the class"""
         ClassDict = self.inst.to_dict()
+        self.assertEqual(type(ClassDict), dict)
         self.assertIsInstance(ClassDict["created_at"], str)
         self.assertIsInstance(ClassDict["updated_at"], str)
 
