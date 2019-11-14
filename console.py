@@ -107,7 +107,6 @@ class HBNBCommand(cmd.Cmd):
         and id by adding or updating attribute
         (save the change into the JSON file) """
         arg = shlex.split(args)
-        tam = len(arg)
         if not arg:
             print("** class name missing **")
             return
