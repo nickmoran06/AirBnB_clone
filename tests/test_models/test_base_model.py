@@ -30,16 +30,11 @@ class TestBaseModel(unittest.TestCase):
 
     # Functionality
     def test_AtributtesClass(self):
-        self.inst.name = "Diego"
-        self.inst.number = 19
-        self.inst.place = "San Francisco"
-        self.inst.number_rooms = 1
-        self.assertEqual(str, type(self.inst.name))
-        self.assertEqual(int, type(self.inst.number))
-        self.assertEqual(str, type(self.inst.place))
-        self.assertEqual(int, type(self.inst.number_rooms))
+        self.assertIs(datetime, type(self.inst.created_at))
+        self.assertIs(datetime, type(self.inst.updated_at))
         self.assertNotEqual(datetime.now(), self.inst.created_at)
         self.assertNotEqual(datetime.now(), self.inst.updated_at)
+        self.assertNotEqual(self.inst.created_at, self.inst.updated_at)
 
     # Documentation
     def test_ModuleDocstring(self):
@@ -54,11 +49,21 @@ class TestBaseModel(unittest.TestCase):
     # Existence and types
     def test_IsInstance(self):
         """Testing the existence of the instance"""
+        DictIns = self.inst.to_dict()
         self.assertIsInstance(self.inst, BaseModel)
+        self.assertEqual(DictIns['__class__'], "BaseModel")
+        self.assertEqual(DictIns['created_at'], self.inst.created_at.isoformat())
+        self.assertEqual(DictIns['updated_at'], self.inst.updated_at.isoformat())
+        self.assertEqual(DictIns['id'], self.inst.id)
+        self.assertIsInstance(DictIns['created_at'], str)
+        self.assertIsInstance(DictIns['updated_at'], str)
 
-    def test_TypeId(self):
-        """Test the type of the method id"""
+
+    def test_Types(self):
+        """Test the types of the atributes"""
         self.assertEqual(str, type(self.inst.id))
+        self.assertIs(str, type(self.inst.id))
+
 
     def test_File(self):
         """The existence of the json file"""
