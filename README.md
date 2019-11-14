@@ -43,3 +43,19 @@ File | Description
 ## Execute
    - Run the console in interactive mode: `./console`
    - But also in non-interactive mode: (like the Shell project in C:) echo "help" | `./console.py`
+i## Example
+Run the executable in your terminal:
+```
+$ ./console
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb)
+(hbnb)
+(hbnb) quit
+
+```
+
