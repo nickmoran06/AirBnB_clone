@@ -10,13 +10,13 @@ import os
 from models import storage
 from models.engine.file_storage import FileStorage
 
+
 class TestFileStorage(unittest.TestCase):
     """
     Test of the FileStorage class
     """
 
-
-    #Specific set up of the unittest
+    # Specific set up of the unittest
     def setUp(self):
         """Instance of the class"""
         self.inst = FileStorage()
@@ -30,15 +30,13 @@ class TestFileStorage(unittest.TestCase):
         except BaseException:
             pass
 
-
-    #Functionality
+    # Functionality
     def test_AtributtesClass(self):
         self.inst.name = "Nicolas"
         self.assertEqual(str, type(self.inst.name))
         self.assertEqual("Nicolas", self.inst.name)
 
-
-    #Documentation
+    # Documentation
     def test_ModuleDocstring(self):
         """Testing the documentation of the module"""
         self.assertIsNotNone(FileStorage.__doc__)
@@ -48,8 +46,7 @@ class TestFileStorage(unittest.TestCase):
         for doc in dir(FileStorage):
             self.assertIsNotNone(doc.__doc__)
 
-
-    #Existence and types
+    # Existence and types
     def test_IsInstance(self):
         """Testing the existence of the instance"""
         self.assertIsInstance(self.inst, FileStorage)
@@ -64,7 +61,6 @@ class TestFileStorage(unittest.TestCase):
         self.assertTrue(hasattr(FileStorage, "__init__"))
         self.assertTrue(hasattr(FileStorage, "__str__"))
         self.assertTrue(hasattr(FileStorage, "save"))
-
 
 if __name__ == "__main__":
     unittest.main()

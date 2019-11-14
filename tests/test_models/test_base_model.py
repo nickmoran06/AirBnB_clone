@@ -14,8 +14,7 @@ class TestBaseModel(unittest.TestCase):
     Test of the BaseModel class
     """
 
-
-    #Specific set up of the unittest
+    # Specific set up of the unittest
     def setUp(self):
         """Instance of the class"""
         self.inst = BaseModel()
@@ -29,8 +28,7 @@ class TestBaseModel(unittest.TestCase):
         except BaseException:
             pass
 
-
-    #Functionality
+    # Functionality
     def test_AtributtesClass(self):
         self.inst.name = "Diego"
         self.inst.number = 19
@@ -43,8 +41,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertNotEqual(datetime.now(), self.inst.created_at)
         self.assertNotEqual(datetime.now(), self.inst.updated_at)
 
-
-    #Documentation
+    # Documentation
     def test_ModuleDocstring(self):
         """Testing the documentation of the module"""
         self.assertIsNotNone(BaseModel.__doc__)
@@ -54,8 +51,7 @@ class TestBaseModel(unittest.TestCase):
         for doc in dir(BaseModel):
             self.assertIsNotNone(doc.__doc__)
 
-
-    #Existence and types
+    # Existence and types
     def test_IsInstance(self):
         """Testing the existence of the instance"""
         self.assertIsInstance(self.inst, BaseModel)

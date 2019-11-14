@@ -15,8 +15,7 @@ class TestReview(unittest.TestCase):
     Test of the Review class
     """
 
-
-    #Specific set up of the unittest
+    # Specific set up of the unittest
     def setUp(self):
         """Instance of the class"""
         self.inst = Review()
@@ -30,15 +29,13 @@ class TestReview(unittest.TestCase):
         except BaseException:
             pass
 
-
-    #Functionality
+    # Functionality
     def test_AtributtesClass(self):
         self.assertEqual(str, type(self.inst.place_id))
         self.assertEqual(str, type(self.inst.user_id))
         self.assertEqual(str, type(self.inst.text))
 
-
-    #Documentation
+    # Documentation
     def test_ModuleDocstring(self):
         """Testing the documentation of the module"""
         self.assertIsNotNone(Review.__doc__)
@@ -48,8 +45,7 @@ class TestReview(unittest.TestCase):
         for doc in dir(Review):
             self.assertIsNotNone(doc.__doc__)
 
-
-    #Existence and types
+    # Existence and types
     def test_IsInstance(self):
         """Testing the existence of the instance"""
         self.assertIsInstance(self.inst, Review)

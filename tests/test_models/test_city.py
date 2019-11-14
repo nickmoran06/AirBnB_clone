@@ -15,8 +15,7 @@ class TestCity(unittest.TestCase):
     Test of the City class
     """
 
-
-    #Specific set up of the unittest
+    # Specific set up of the unittest
     def setUp(self):
         """Instance of the class"""
         self.inst = City()
@@ -30,16 +29,14 @@ class TestCity(unittest.TestCase):
         except BaseException:
             pass
 
-
-    #Functionality
+    # Functionality
     def test_AtributtesClass(self):
         self.inst.name = "Nicolas"
         self.assertEqual(str, type(self.inst.name))
         self.assertEqual("Nicolas", self.inst.name)
         self.assertEqual(str, type(self.inst.state_id))
 
-
-    #Documentation
+    # Documentation
     def test_ModuleDocstring(self):
         """Testing the documentation of the module"""
         self.assertIsNotNone(City.__doc__)
@@ -49,8 +46,7 @@ class TestCity(unittest.TestCase):
         for doc in dir(City):
             self.assertIsNotNone(doc.__doc__)
 
-
-    #Existence and types
+    # Existence and types
     def test_IsInstance(self):
         """Testing the existence of the instance"""
         self.assertIsInstance(self.inst, City)

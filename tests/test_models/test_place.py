@@ -15,8 +15,7 @@ class TestPlace(unittest.TestCase):
     Test of the Place class
     """
 
-
-    #Specific set up of the unittest
+    # Specific set up of the unittest
     def setUp(self):
         """Instance of the class"""
         self.inst = Place()
@@ -30,8 +29,7 @@ class TestPlace(unittest.TestCase):
         except BaseException:
             pass
 
-
-    #Functionality
+    # Functionality
     def test_AtributtesClass(self):
         self.inst.name = "Nicolas"
         self.assertEqual("Nicolas", self.inst.name)
@@ -47,8 +45,7 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(float, type(self.inst.longitude))
         self.assertEqual(list, type(self.inst.amenity_ids))
 
-
-    #Documentation
+    # Documentation
     def test_ModuleDocstring(self):
         """Testing the documentation of the module"""
         self.assertIsNotNone(Place.__doc__)
@@ -58,8 +55,7 @@ class TestPlace(unittest.TestCase):
         for doc in dir(Place):
             self.assertIsNotNone(doc.__doc__)
 
-
-    #Existence and types
+    # Existence and types
     def test_IsInstance(self):
         """Testing the existence of the instance"""
         self.assertIsInstance(self.inst, Place)

@@ -15,8 +15,7 @@ class TestUser(unittest.TestCase):
     Test of the User class
     """
 
-
-    #Specific set up of the unittest
+    # Specific set up of the unittest
     @classmethod
     def setUp(cls):
         """Instance of the class"""
@@ -32,16 +31,14 @@ class TestUser(unittest.TestCase):
         except BaseException:
             pass
 
-
-    #Functionality
+    # Functionality
     def test_AtributtesClass(self):
         self.assertEqual(str, type(self.inst.email))
         self.assertEqual(str, type(self.inst.password))
         self.assertEqual(str, type(self.inst.first_name))
         self.assertEqual(str, type(self.inst.last_name))
 
-
-    #Documentation
+    # Documentation
     def test_ModuleDocstring(self):
         """Testing the documentation of the module"""
         self.assertIsNotNone(User.__doc__)
@@ -51,8 +48,7 @@ class TestUser(unittest.TestCase):
         for doc in dir(User):
             self.assertIsNotNone(doc.__doc__)
 
-
-    #Existence and types
+    # Existence and types
     def test_IsInstance(self):
         """Testing the existence of the instance"""
         self.assertIsInstance(self.inst, User)

@@ -15,8 +15,7 @@ class TestAmenity(unittest.TestCase):
     Test of the Amenity class
     """
 
-
-    #Specific set up of the unittest
+    # Specific set up of the unittest
     def setUp(self):
         """Instance of the class"""
         self.inst = Amenity()
@@ -30,15 +29,13 @@ class TestAmenity(unittest.TestCase):
         except BaseException:
             pass
 
-
-    #Functionality
+    # Functionality
     def test_AtributtesClass(self):
         self.inst.name = "Nicolas"
         self.assertEqual(str, type(self.inst.name))
         self.assertEqual("Nicolas", self.inst.name)
 
-
-    #Documentation
+    # Documentation
     def test_ModuleDocstring(self):
         """Testing the documentation of the module"""
         self.assertIsNotNone(Amenity.__doc__)
@@ -48,8 +45,7 @@ class TestAmenity(unittest.TestCase):
         for doc in dir(Amenity):
             self.assertIsNotNone(doc.__doc__)
 
-
-    #Existence and types
+    # Existence and types
     def test_IsInstance(self):
         """Testing the existence of the instance"""
         self.assertIsInstance(self.inst, Amenity)
