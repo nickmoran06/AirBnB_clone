@@ -121,6 +121,8 @@ class HBNBCommand(cmd.Cmd):
                             if key in name:
                                 setattr(name[key], arg[2], arg[3])
                                 name[key].save()
+                            else:
+                                print("** no instance found **")
                         else:
                             print("** value missing **")
                     else:
