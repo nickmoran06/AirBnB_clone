@@ -88,15 +88,17 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, args):
         """ Prints all instances based or not on the class name """
         arg = shlex.split(args)
-        My_list = []
+        my_list = []
         name = storage.all()
         if len(arg) == 0:
             for key, value in name.items():
-                print(value)
+                my_list.append(str(value))
+            print(my_list)
         elif arg[0] in classes:
             for key, value in name.items():
                 if arg[0] in str(value):
-                    print(value)
+                    my_list.append(str(value))
+            print(my_list)
         else:
             print("** class doesn't exist **")
 
