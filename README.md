@@ -1,5 +1,5 @@
 <p>
-<img width="200" src="https://lh4.googleusercontent.com/yUzaviDgzDIq4-ZHp9k0YU5fsz0nOdekNRt1qHgp7Qdlw5BNfe6bETEf5ZWd-Vkn_m57BPx7HcDrwFK41ptLnQLTNipWmTAtiQwZL_8s97Nkzn94xP7XVKb3RnV0fx8QEZoxlkVd" align="right" >
+<img width="200" src="https://camo.githubusercontent.com/a0c52a69dc410e983b8c63fa4aa57e83cb4157cd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f696e7472616e65742d70726f6a656374732d66696c65732f686f6c626572746f6e7363686f6f6c2d6869676865722d6c6576656c5f70726f6772616d6d696e672b2f3236332f4842544e2d68626e622d46696e616c2e706e67" align="right" >
 </p>
 
 # AirBnB clone - The console
@@ -16,7 +16,7 @@
 * [Authors](#authors)
 
 ## Description
-AirBnB clone - The console is 
+The console of the AirBnB clone is a command interpreter to manage the AirBnB objects, that allow to undestand the manipulation of the information required and how is storage in the program.
 
 ## Files
 File | Description
