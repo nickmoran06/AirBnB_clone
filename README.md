@@ -36,34 +36,6 @@ File | Description
 
 ---
 ## Requirements
- * Simple_shell is designed to run on the Ubuntu 14.04 LTS Linux environment.
- * Must be compiled using the GNU v. gcc 4.8.4 compiler collection with flags-Wall, -Werror, -Wextra, and -pedantic.
 
 ## Installation
-   - Clone this repository: `git clone "https://github.com/julgachancipa/simple_shell.git"`
-
-## Compile
-   - `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
-
-## Execute
-   - Run the shell in interactive mode: `./hsh`
-   - Or run the shell in non-interactive mode: `echo "pwd" | ./hsh`
-
-## Example
-Run the executable in your terminal after compiling:
-```
-$ ./hsh
-$ # This is our rendition of the shell
-$ ls -la
-total 96
-```
----
-
-## Bugs
-There are no known bugs.
-
-## Authors
-[Diego Ramos](https://github.com/DiegoRmsR) | [@Imdiegoramoss](https://twitter.com/Imdiegoramoss)
-
-[Emma Gachancipa](https://github.com/julgachancipa) | [@julgachancipa](https://twitter.com/julgachancipa)
-
+   - Clone this repository: `https://github.com/nickmoran06/AirBnB_clone.git"`
