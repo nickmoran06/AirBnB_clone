@@ -7,9 +7,8 @@ import unittest
 from models.base_model import BaseModel
 from datetime import datetime
 import os
-import pep8
 from models import storage
-
+from models.engine.file_storage import FileStorage
 
 class TestFileStorage(unittest.TestCase):
     """
@@ -18,15 +17,13 @@ class TestFileStorage(unittest.TestCase):
 
 
     #Specific set up of the unittest
-    @classmethod
-    def SetUp(cls):
+    def setUp(self):
         """Instance of the class"""
-        cls.inst = Amenity()
+        self.inst = FileStorage()
 
-    @classmethod
-    def Teardown(cls):
+    def tearDown(self):
         """Deleting of the instance with the proper file"""
-        del cls.inst
+        del self.inst
 
         try:
             os.remove("file.json")
@@ -35,52 +32,39 @@ class TestFileStorage(unittest.TestCase):
 
 
     #Functionality
-    def TestAtributtesClass(self):
+    def test_AtributtesClass(self):
         self.inst.name = "Nicolas"
         self.assertEqual(str, type(self.inst.name))
         self.assertEqual("Nicolas", self.inst.name)
 
 
     #Documentation
-    def TestModuleDocstring(self):
+    def test_ModuleDocstring(self):
         """Testing the documentation of the module"""
-        self.assertIsNotNone(Amenity.__doc__)
+        self.assertIsNotNone(FileStorage.__doc__)
 
-    def TestMethodsDocstring(self):
+    def test_MethodsDocstring(self):
         """Testing the documentation of the different methods"""
-        for doc in dir(Amenity):
+        for doc in dir(FileStorage):
             self.assertIsNotNone(doc.__doc__)
 
 
     #Existence and types
-    def TestIsInstance(self):
+    def test_IsInstance(self):
         """Testing the existence of the instance"""
-        self.assertIsInstance(self.inst, Amenity)
+        self.assertIsInstance(self.inst, FileStorage)
 
-    def TestTypeId(self):
-        """Test the type of the method id"""
-        self.assertEqual(str, type(self.inst.id))
-
-    def TestFile(self):
+    def test_File(self):
         """The existence of the json file"""
         self.inst.save()
         self.assertTrue(os.path.isfile("file.json"))
 
-    def TestMethods(self):
+    def test_Methods(self):
         """Testing the existence of the different methods"""
-        self.assertTrue(hasattr(Amenity, "__init__"))
-        self.assertTrue(hasattr(Amenity, "__str__"))
-        self.assertTrue(hasattr(Amenity, "save"))
-        self.assertTrue(hasattr(Amenity, "to_dict"))
+        self.assertTrue(hasattr(FileStorage, "__init__"))
+        self.assertTrue(hasattr(FileStorage, "__str__"))
+        self.assertTrue(hasattr(FileStorage, "save"))
 
-    def TestClassDict(self):
-        """Testing the dictionary of the class"""
-        ClassDict = self.inst.to_dict()
-        self.assertEqual(dict, type(dict_test))
-        self.assertIsInstance(ClassDict["created_at"], str)
-        self.assertIsInstance(ClassDict["updated_at"], str)
-        self.assertTrue("ClassDict" in dir(self.inst))
-        self.assertEqual(Classict.__class_.__name__, "Amenity")
 
 if __name__ == "__main__":
     unittest.main()

@@ -7,8 +7,7 @@ import unittest
 from models.base_model import BaseModel
 from datetime import datetime
 import os
-import pep8
-from models.review import review
+from models.review import Review
 
 
 class TestReview(unittest.TestCase):
@@ -18,15 +17,13 @@ class TestReview(unittest.TestCase):
 
 
     #Specific set up of the unittest
-    @classmethod
-    def SetUp(cls):
+    def setUp(self):
         """Instance of the class"""
-        cls.inst = Review()
+        self.inst = Review()
 
-    @classmethod
-    def Teardown(cls):
+    def tearDown(self):
         """Deleting of the instance with the proper file"""
-        del cls.inst
+        del self.inst
 
         try:
             os.remove("file.json")
@@ -35,52 +32,50 @@ class TestReview(unittest.TestCase):
 
 
     #Functionality
-    def TestAtributtesClass(self):
+    def test_AtributtesClass(self):
         self.assertEqual(str, type(self.inst.place_id))
         self.assertEqual(str, type(self.inst.user_id))
         self.assertEqual(str, type(self.inst.text))
 
 
     #Documentation
-    def TestModuleDocstring(self):
+    def test_ModuleDocstring(self):
         """Testing the documentation of the module"""
         self.assertIsNotNone(Review.__doc__)
 
-    def TestMethodsDocstring(self):
+    def test_MethodsDocstring(self):
         """Testing the documentation of the different methods"""
         for doc in dir(Review):
             self.assertIsNotNone(doc.__doc__)
 
 
     #Existence and types
-    def TestIsInstance(self):
+    def test_IsInstance(self):
         """Testing the existence of the instance"""
         self.assertIsInstance(self.inst, Review)
 
-    def TestTypeId(self):
+    def test_TypeId(self):
         """Test the type of the method id"""
         self.assertEqual(str, type(self.inst.id))
 
-    def TestFile(self):
+    def test_File(self):
         """The existence of the json file"""
         self.inst.save()
         self.assertTrue(os.path.isfile("file.json"))
 
-    def TestMethods(self):
+    def test_Methods(self):
         """Testing the existence of the different methods"""
         self.assertTrue(hasattr(Review, "__init__"))
         self.assertTrue(hasattr(Review, "__str__"))
         self.assertTrue(hasattr(Review, "save"))
         self.assertTrue(hasattr(Review, "to_dict"))
 
-    def TestClassDict(self):
+    def test_ClassDict(self):
         """Testing the dictionary of the class"""
         ClassDict = self.inst.to_dict()
-        self.assertEqual(dict, type(dict_test))
+        self.assertEqual(dict, type(ClassDict))
         self.assertIsInstance(ClassDict["created_at"], str)
         self.assertIsInstance(ClassDict["updated_at"], str)
-        self.assertTrue("ClassDict" in dir(self.inst))
-        self.assertEqual(Classict.__class_.__name__, "Amenity")
 
 if __name__ == "__main__":
     unittest.main()
