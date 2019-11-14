@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-
 """
 Module of the file_storage class
 """
 
 import json
 from models.base_model import BaseModel
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class FileStorage:
@@ -36,7 +40,8 @@ class FileStorage:
     def reload(self):
         """Deserializes the JSON file to __objects"""
         try:
-            with open(self.__file_path, "r") as JsonFile:
-                MyFile = json.load(JsonFile)
+            if __file_path:
+                with open(self.__file_path, "r") as JsonFile:
+                    MyFile = json.load(JsonFile)
         except:
             pass
