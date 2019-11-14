@@ -4,7 +4,9 @@ Module of the file_storage class
 """
 
 import json
+import os
 from models.base_model import BaseModel
+from models.user import User
 from models.state import State
 from models.city import City
 from models.amenity import Amenity
@@ -39,9 +41,14 @@ class FileStorage:
 
     def reload(self):
         """Deserializes the JSON file to __objects"""
+        ClassesDict = {"BaseModel": BaseModel, "User": User, "State": State,
+                       "City": City,
+                       "Amenity": Amenity, "Place": Place, "Review": Review}
         try:
-            if __file_path:
+            if os.path.isfile(self.__file_path):
                 with open(self.__file_path, "r") as JsonFile:
                     MyFile = json.load(JsonFile)
+                for key, val in MyFile.items():
+                    self.__objects[key] = ClassesDict[val["__class__"]](**val)
         except:
             pass
