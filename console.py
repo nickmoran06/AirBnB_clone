@@ -124,7 +124,10 @@ class HBNBCommand(cmd.Cmd):
                             else:
                                 print("** no instance found **")
                         else:
-                            print("** value missing **")
+                            if str(arg[0] + "." + arg[1]) not in storage.all():
+                                print("** no instance found **")
+                            else:
+                                print("** value missing **")
                     else:
                         key = str(arg[0] + "." + arg[1])
                         name = storage.all()
